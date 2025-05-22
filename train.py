@@ -108,8 +108,8 @@ def main(**kwargs) -> None:
     c.G_kwargs.synthesis_kwargs.architecture = 'skip'
 
     # Optimizer.
-    c.G_opt_kwargs = dnnlib.EasyDict(class_name='torch.optim.Adam', betas=[0, 0.99], eps=1e-8, lr=0.002)
-    c.D_opt_kwargs = dnnlib.EasyDict(class_name='torch.optim.Adam', betas=[0, 0.99], eps=1e-8, lr=0.002)
+    c.G_opt_kwargs = dnnlib.EasyDict(class_name='torch.optim.Adam', betas=[0.9, 0.99], eps=1e-8, lr=0.002)
+    c.D_opt_kwargs = dnnlib.EasyDict(class_name='torch.optim.Adam', betas=[0.9, 0.99], eps=1e-8, lr=0.002)
     if c.G_kwargs.train_mode == 'text_encoder':
         c.G_opt_kwargs.lr = 3e-6
 
